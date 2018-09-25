@@ -23,7 +23,7 @@
     self.titleLab.text = testModel.title;
 }
 
-- (UIView *)contaionView
+- (UIView *)containView
 {
     return self.titleLab;
 }

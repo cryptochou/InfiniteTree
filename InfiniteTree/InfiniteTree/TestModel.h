@@ -12,6 +12,6 @@
 @interface TestModel : NSObject<InfiniteTreeModelDataProtocol>
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSArray *childrens;
+@property (nonatomic, strong) NSArray *items;
 
 @end

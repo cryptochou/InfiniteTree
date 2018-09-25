@@ -43,7 +43,7 @@
         if (i == count - 1) {
             if (self.isLastDot) {
                 model.isLastDot = YES;
-            } else if (model.parentModel && !model.parentModel.parentModel) {
+            } else if (model.parentModel && !model.parentModel.parentModel) { // 对第二级做额外的处理
                 model.isLastDot = YES;
             }
         }

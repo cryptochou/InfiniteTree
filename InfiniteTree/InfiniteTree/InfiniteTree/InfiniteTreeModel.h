@@ -24,7 +24,7 @@
 @property (nonatomic, assign) BOOL isLastDot;
 @property (nonatomic, weak) InfiniteTreeModel *parentModel;
 
-@property (nonatomic, assign) BOOL hasChildren;
+@property (nonatomic, assign, readonly) BOOL hasChildren;
 @property (nonatomic, strong) id<InfiniteTreeModelDataProtocol> dataModel;
 
 + (NSArray <InfiniteTreeModel *>*)infiniteTreeModelArrayWithDataModels:(NSArray<id<InfiniteTreeModelDataProtocol>> *)dataModels;

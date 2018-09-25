@@ -12,7 +12,7 @@
 
 - (NSArray *)childrenModels
 {
-    return self.childrens;
+    return self.items;
 }
 
 - (NSString *)identifier

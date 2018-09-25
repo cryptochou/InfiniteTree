@@ -40,7 +40,7 @@
         [self.contentView addSubview:self.tagBtn];
         [self.contentView addSubview:self.topLineView];
         [self.contentView addSubview:self.bottomLineView];
-        [self.contentView addSubview:self.contaionView];
+        [self.contentView addSubview:self.containView];
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
@@ -54,7 +54,7 @@
     self.topLineView.frame = CGRectMake(k_TAG_BUTTON_LEADING + k_TAG_BUTTON_WH / 2, 0, k_LINE_W, k_TOP_LINE_H);
     self.tagBtn.frame = CGRectMake(k_TAG_BUTTON_LEADING, CGRectGetMaxY(self.topLineView.frame), k_TAG_BUTTON_WH, k_TAG_BUTTON_WH);
     self.bottomLineView.frame = CGRectMake(self.topLineView.frame.origin.x, CGRectGetMaxY(self.tagBtn.frame), k_LINE_W, self.frame.size.height - CGRectGetMaxY(self.tagBtn.frame));
-    self.contaionView.frame = CGRectMake(CGRectGetMaxX(self.tagBtn.frame) + k_TAG_BUTTON_LEADING, 0, self.frame.size.width - CGRectGetMaxX(self.tagBtn.frame) + k_TAG_BUTTON_LEADING, self.frame.size.height);
+    self.containView.frame = CGRectMake(CGRectGetMaxX(self.tagBtn.frame) + k_TAG_BUTTON_LEADING, 0, self.frame.size.width - CGRectGetMaxX(self.tagBtn.frame) + k_TAG_BUTTON_LEADING, self.frame.size.height);
 }
 
 - (void)setModel:(InfiniteTreeModel *)model

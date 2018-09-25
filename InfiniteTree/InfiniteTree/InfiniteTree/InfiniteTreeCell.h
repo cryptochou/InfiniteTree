@@ -12,7 +12,7 @@
 
 @interface InfiniteTreeCell : UITableViewCell
 
-@property (strong, nonatomic) UIView *contaionView;
+@property (strong, nonatomic) UIView *containView;
 
 @property (nonatomic, strong) InfiniteTreeModel *model;
 
