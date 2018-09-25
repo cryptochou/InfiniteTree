@@ -183,9 +183,9 @@ _infiniteSource = [NSMutableArray arrayWithArray:[InfiniteTreeModel infiniteTree
 ```
 
 ### Cell InfiniteTreeCell
-主要的展开收起逻辑由模型类来进行处理，因此 Cell 的任务就相对简单的多了，主要就是根据模型来展示相关数据就可以了。
+主要的展开收起逻辑由模型类来进行处理，因此 Cell 的任务就相对简单的多了，主要就是根据模型来展示相关数据就可以了。
 
-### TableView 扩展 UITableView (InfiniteTree)
+### TableView 扩展 UITableView (InfiniteTree)
 
 这个分类主要用于封装展开收起的逻辑
 
@@ -211,4 +211,7 @@ _infiniteSource = [NSMutableArray arrayWithArray:[InfiniteTreeModel infiniteTree
     [self reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 ```
+
+## 总结
+基本实现思路总结起来就是把所有的问题都抽象和数据化，数据驱动界面的显示。
 
