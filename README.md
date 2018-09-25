@@ -63,17 +63,17 @@ _infiniteSource = [NSMutableArray arrayWithArray:[InfiniteTreeModel infiniteTree
 }
 ```
 
-通过上面几步就可以实现了展开收起的功能，具体能展开几层完全取决于相关数据。而使用者只需要专注于实现业务相关代码就行了。
+通过上面几步就可以实现了展开收起的功能，具体能展开几层完全取决于相关数据。而使用者只需要专注于实现业务相关代码就行了。
 
 ## 原理解析
 在设计的时候主要的思路
 1. 封装 
-    左侧的按钮显示以及每行应该显示什么不应该有调用者处理，需要进行封装
+    左侧的按钮显示以及每行应该显示什么不应该有调用者处理，需要进行封装
 2. 抽象
-    在具体项目中每个模块中服务器返回的数据类型可能都不一样，因此需要抽象出来一个接口，OC 中就是协议。
+    在具体项目中每个模块中服务器返回的数据类型可能都不一样，因此需要抽象出来一个接口，OC 中就是协议。
 
 ### 模型 InfiniteTreeModel
-在上面思路的指导下首先想到的就是数据结构中的树，因此创建一个模型类来描述树的每个节点，比如父节点和子节点信息，以及该节点的打开还是关闭等等信息。
+在上面思路的指导下首先想到的就是数据结构中的树，因此创建一个模型类来描述树的每个节点，比如父节点和子节点信息，以及该节点的打开还是关闭等等信息。
 
 ```
 @property (nonatomic, assign) BOOL isOpen;
@@ -100,7 +100,7 @@ _infiniteSource = [NSMutableArray arrayWithArray:[InfiniteTreeModel infiniteTree
 @property (nonatomic, strong) id<InfiniteTreeModelDataProtocol> dataModel;
 ```
 
-然后在创建数据源的时候通过 InfiniteTreeModel 的类方法来创建第一级显示的模型
+然后在创建数据源的时候通过 InfiniteTreeModel 的类方法来创建第一级显示的模型
 
 ```
 + (NSArray <InfiniteTreeModel *>*)infiniteTreeModelArrayWithDataModels:(NSArray<id<InfiniteTreeModelDataProtocol>> *)dataModels
@@ -118,14 +118,14 @@ _infiniteSource = [NSMutableArray arrayWithArray:[InfiniteTreeModel infiniteTree
 }
 ```
 
-当点击某一行需要展开的时候插入数据通过下面三个方法来获取插入的模型和插入的位置
+当点击某一行需要展开的时候插入数据通过下面三个方法来获取插入的模型和插入的位置
 
 ```
 - (NSArray <InfiniteTreeModel *>*)insertTreeModels;
 - (NSArray *)insertTreeModelsIndexPathsWithStartIndex:(NSInteger)startIndex;
 - (NSIndexSet *)insertTreeModelsIndexSetWithStartIndex:(NSInteger)startIndex;
 ```
-最主要的方法就是 insertTreeModels 。这个方法通过当前模型的 childrenModels 来创建子节点的模型。
+最主要的方法就是 insertTreeModels 这个方法通过当前模型的 childrenModels 来创建子节点的模型。
 
 ```
 - (NSArray <InfiniteTreeModel *>*)insertTreeModels
@@ -152,7 +152,7 @@ _infiniteSource = [NSMutableArray arrayWithArray:[InfiniteTreeModel infiniteTree
 
 ```
 
-收起的时候通过下面方法来获取将要删除的模型的位置
+收起的时候通过下面方法来获取将要删除的模型的位置
 
 ```
 - (NSIndexSet *)qureyTreeModelsWithSource:(NSArray<InfiniteTreeModel*>*)source;
